@@ -12,11 +12,10 @@ export default class CardBack extends Component {
 
   generateRatingElement = () => {
     console.log(this.props.IMBDRating)
-    if (this.props.IMDBRating == null) {
-      return <h4>No Rating Found</h4>
-      
-    } else {
+    if (this.props.IMDBRating !== null) {
       return <img src={imgMapper[this.props.IMBDRating]} alt="" />
+    } else {
+      return <h4>No Rating Found</h4>
     }
   }
 
@@ -32,5 +31,3 @@ export default class CardBack extends Component {
     )
   }
 }
-// if the IMDBRating prop is null, return an < h4 > with the contents 'No Rating Found'
-// otherwise, return <img src={imgMapper[prop]} alt="" /> (using the correct prop)
